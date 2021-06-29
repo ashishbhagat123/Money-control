@@ -1,0 +1,24 @@
+.main {
+    width: 28%;
+    height: fit-content;
+    align-items: left;
+    padding: 2% 1%;
+    color: honeydew;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.main h1{
+    margin: 0;
+}
+.main p{
+    font-size: 3vh;
+    margin: 1%;
+}
+@media only screen and (max-width: 768px){
+    .main{
+        width: 80%;
+        margin: 4%;
+        padding: 4% 2%;
+    }
+}

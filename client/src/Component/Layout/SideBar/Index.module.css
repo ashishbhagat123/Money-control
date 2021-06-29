@@ -1,0 +1,51 @@
+.main > span{
+    position: fixed;
+    z-index: 100;
+    top: 4%;
+    left: 2%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+.main > div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 18%;
+    background: maroon;
+    transition: .5s;
+}
+div ul{
+    padding: 0;
+    padding-top: 30%;
+    list-style-type: none;
+}
+div ul li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+div ul li:hover{
+    background: cornflowerblue;
+}
+
+div ul li p {
+    font-size: 22px;
+    color: white;
+}
+
+div ul li svg{
+    font-size: 30px;
+    color: white;
+}
+
+@media only screen and (max-width: 1024px){
+    .main > div{
+        right: 0;
+        width: 50%;
+        transform: translateX(-100%);
+    }
+}
