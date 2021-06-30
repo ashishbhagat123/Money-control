@@ -14,9 +14,9 @@ const Dashboard = ({ margin }) => {
             className={styles.main}
         >
             <div className={styles.income_grid}>
-                <IncomeCard color="red" amount="500" account="Total Expense" />
-                <IncomeCard color="green" amount="500" account="Total Income" />
-                <IncomeCard color="blue" amount="500" account="Total Balance" />
+                <IncomeCard color="#BF1363" amount="500" account="Total Expense" />
+                <IncomeCard color="#29BB89" amount="500" account="Total Income" />
+                <IncomeCard color="#1687A7" amount="500" account="Total Balance" />
             </div>
             <div>
                 <ExpensesChart income="10000" expense="5000" highest_expense="5000" />

@@ -13,18 +13,20 @@
 }
 .flex_container{
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
 }
+.flex_container > div:nth-child(1){
+    padding-top: 2%;
+}
 .flex_container > div:nth-child(1) > div {
-    padding-top: 15%;
+    padding-top: 10%;
 }
 .flex_container > div:nth-child(1) > div img{
     margin: 5%;
     cursor: pointer;
 }
 .monthly_budget{
-    padding-top: 10%;
+    padding-top: 1%;
 }
 .monthly_budget > div{
     display: flex;
