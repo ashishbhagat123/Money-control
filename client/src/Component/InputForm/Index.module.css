@@ -1,8 +1,8 @@
-.main{
+.main {
     width: 100vw;
     height: 100vh;
     background: black;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     position: fixed;
     top: 0;
@@ -13,34 +13,73 @@
     justify-content: center;
     transition: cubic-bezier(0.47, 0, 0.745, 0.715);
 }
-.main form {
+.main > div {
     position: relative;
     background-color: #fefefe;
     margin: auto;
-    padding: 0;
+    padding-bottom: 3%;
     border: 1px solid #888;
     width: 30%;
-    height: 70vh;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    height: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
-  }
-  
-  /* Add Animation */
-  @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-  }
-  
-  @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-  }
+    animation-duration: 0.4s;
+    position: relative;
+}
+.main > div > h2{
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 5%;
+}
+.main > div > span{
+  position: absolute;
+  font-size: 30px;
+  right: 15px;
+  top: 10px;
+  transform: rotate(45deg);
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+}
+.main > div > .form {
+    width: 100%;
+    text-align: left;
+    border: 1px solid lightgrey;
+    width: 92%;
+    margin: auto;
+    padding: 6% 2%;
+}
 
-  @media only screen and (max-width:768px){
-    .main form {
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .main .form {
         width: 90%;
     }
-  }
+    .main > div{
+        width: 80%;
+    }
+}

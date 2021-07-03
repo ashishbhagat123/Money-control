@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Dashboard from "../../Pages/Dashboard/Index";
+import LogIn from "../../Pages/Login/Index";
+import SignUp from "../../Pages/SignUp/Index";
 import Navbar from "./Navbar/Index";
 import SideBar from "./SideBar/Index";
 
@@ -16,8 +18,14 @@ const Layout = ({ pageName, header, body, footer, sidebar }) => {
             case "Dashboard": {
                 return <Dashboard margin = {open}/>;
             }
+            case "LogIn": {
+                return <LogIn />;
+            }
+            case "SignUp": {
+                return <SignUp />;
+            }
             default: {
-                return <Dashboard />;
+                return <SignUp />;
             }
         }
     };

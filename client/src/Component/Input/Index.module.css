@@ -1,0 +1,19 @@
+.main{
+    width: 100%;
+    margin: auto;
+    text-align: left;
+}
+.main input, .main select{
+    width: 96%;
+    padding: 3% 2%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    margin-bottom: 5%;
+}
+.main select{
+    width: 100%;
+    background-color: white;
+}
+
+

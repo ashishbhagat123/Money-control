@@ -1,0 +1,10 @@
+.btn{
+    width: 100%;
+    padding: 2% 0;
+    border: none;
+    font-weight: 800;
+}
+.btn:hover{
+    background-color: skyblue!important;
+    color: black;
+}

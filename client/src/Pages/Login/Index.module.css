@@ -1,0 +1,44 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFEAC9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main > div {
+    width: 80vw;
+    height: 90vh;
+    text-align: left;
+}
+.heading h1{
+    color: #D83A56;
+}
+.heading p, .heading label{
+    color: grey;
+}
+.signUp_form {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: -4px 8px 10px 0px rgba(0, 0, 0, 0.58);
+    -webkit-box-shadow: -4px 8px 10px 0px rgba(0, 0, 0, 0.58);
+    -moz-box-shadow: -4px 8px 10px 0px rgba(0, 0, 0, 0.58);
+}
+.signUp_form > div {
+    width: 50%;
+}
+.signUp_form > div:nth-child(2) {
+    padding-left: 10%;
+    padding-top: 10%;
+    width: 40%;
+    background: white;
+}
+.signUp_form > div > img {
+    width: 100%;
+    height: 100%;
+}
+.form {
+    width: 80%;
+    text-align: left;
+    margin-top: 8%;
+}

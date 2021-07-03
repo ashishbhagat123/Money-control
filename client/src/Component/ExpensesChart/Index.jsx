@@ -18,9 +18,13 @@ const ExpensesChart = ({ income, expense, highest_expense }) => {
     const [formInput, setFormInput] = useState({});
 
     const handleForm = (input) => {
-        setFormInput(input);
-        setOpenForm(!openForm);
+        if (!openForm) {
+            setFormInput(input);
+        } 
+        setOpenForm(!openForm)
     };
+
+    console.log(formInput);
 
     return (
         <div className={styles.main}>
@@ -31,7 +35,13 @@ const ExpensesChart = ({ income, expense, highest_expense }) => {
                 <div>
                     <h2>TO ADD EXPENSE/INCOME CLICK BELOW</h2>
                     <div>
-                        {openForm && <InputForm data={formInput} />}
+                        {openForm && (
+                            <InputForm
+                                categories={formInput.categories}
+                                type={formInput.type}
+                                closeForm={handleForm}
+                            />
+                        )}
                         <img
                             onClick={() => handleForm(formData.income)}
                             src="https://img.icons8.com/office/150/000000/plus.png"

@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Switch, Route } from "react-router";
 import Layout from "../Component/Layout/Index";
+import PrivateRoute from "./PrivateRoutes/Index";
+import {AuthContext} from "../Context/Auth/Index"
 
 const Router = () => {
-    return (
+    const {isAuthenticated } = useContext(AuthContext)
+
+
+    return (    
         <div>
             <Switch>
-                <Route exact path="">
+                <Route exact path="/signup">
+                    <Layout
+                        pageName={"Signup"}
+                        header={false}
+                        sidebar={false}
+                    />
+                </Route>
+                <Route exact path="/login">
+                    <Layout pageName={"LogIn"} header={false} sidebar={false} />
+                </Route>
+                <PrivateRoute isAuth = {isAuthenticated}  exact path="/">
                     <Layout
                         pageName={"Dashboard"}
                         header={true}
                         sidebar={true}
                     />
-                </Route>
+                </PrivateRoute>
             </Switch>
         </div>
     );
