@@ -15,7 +15,7 @@ const initState = {
 
 const InputForm = ({ type, categories, closeForm }) => {
     const [formData, setFormData] = useState({ ...initState, type: type });
-    const { userDetails, updateDashboard } = useContext(AuthContext)
+    const { userDetails, handleData } = useContext(AuthContext)
 
     const handleFormData = (data) => {
         const { name, value } = data;
@@ -29,7 +29,7 @@ const InputForm = ({ type, categories, closeForm }) => {
             user: userDetails.id
         }
         axios.post("http://localhost:8000/dashboard/expenses", payload)
-        .then(updateDashboard(true))
+        .then(handleData())
         closeForm()
     }
 

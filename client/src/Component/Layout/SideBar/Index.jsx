@@ -1,12 +1,10 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdDashboard } from "react-icons/md";
+import { GiReceiveMoney } from "react-icons/gi";
 import styles from "./Index.module.css";
 
-const SideBar = ({HandleToggleBar, open}) => {
-
-
-
+const SideBar = ({ HandleToggleBar, open, handleDashboardPages, active }) => {
     return (
         <div className={styles.main}>
             <span onClick={HandleToggleBar}>
@@ -26,16 +24,36 @@ const SideBar = ({HandleToggleBar, open}) => {
             >
                 <ul>
                     <li
+                        onClick={() => handleDashboardPages("Home")}
                         style={
-                            open
+                            (open
                                 ? { flexDirection: "row" }
-                                : { flexDirection: "row-reverse" }
+                                : { flexDirection: "row-reverse" },
+                            active === "Home"
+                                ? { background: "cornflowerblue" }
+                                : null)
                         }
                     >
                         <span>
                             <MdDashboard />
                         </span>
                         <p>DashBoard</p>
+                    </li>
+                    <li
+                        onClick={() => handleDashboardPages("Expenses")}
+                        style={
+                            (open
+                                ? { flexDirection: "row" }
+                                : { flexDirection: "row-reverse" },
+                            active === "Expenses"
+                                ? { background: "cornflowerblue" }
+                                : null)
+                        }
+                    >
+                        <span>
+                            <GiReceiveMoney />
+                        </span>
+                        <p>Expenses</p>
                     </li>
                 </ul>
             </div>

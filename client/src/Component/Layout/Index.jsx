@@ -7,16 +7,25 @@ import SideBar from "./SideBar/Index";
 
 const Layout = ({ pageName, header, body, footer, sidebar }) => {
     const [open, setOpen] = useState(false);
+    const [dashboardPage, setDashboardPage] = useState("home");
+    const [active, setActive] = useState("Home");
 
     const HandleToggleBar = () => {
         setOpen(!open);
     };
 
+    const handleDashboardPages = (page) => {
+        setDashboardPage(page);
+        setActive(page)
+        setOpen(false);
+    };
+
     const getPage = () => {
-        // if (body) return body;
         switch (pageName) {
             case "Dashboard": {
-                return <Dashboard margin = {open}/>;
+                return (
+                    <Dashboard margin={open} dashboardPage={dashboardPage} />
+                );
             }
             case "LogIn": {
                 return <LogIn />;
@@ -34,7 +43,12 @@ const Layout = ({ pageName, header, body, footer, sidebar }) => {
         <div>
             {header && <Navbar />}
             {sidebar && (
-                <SideBar HandleToggleBar={HandleToggleBar} open={open} />
+                <SideBar
+                    HandleToggleBar={HandleToggleBar}
+                    handleDashboardPages={handleDashboardPages}
+                    open={open}
+                    active = {active}
+                />
             )}
             {getPage()}
         </div>

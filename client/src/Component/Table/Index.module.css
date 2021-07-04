@@ -1,0 +1,47 @@
+.table {
+    width: 100%;
+    margin: auto;
+    border: 1px solid lightgray;
+    padding: 0;
+    border-collapse: collapse;
+    text-align: center;
+    /* display:block; */
+}
+.table thead {
+    background: black;
+    color: white;
+    padding: 5%;
+    text-align: center;
+}
+.table thead th {
+    padding: 1%;
+}
+.table tbody td {
+    padding: 1%;
+}
+
+.table tbody tr:nth-child(even) {
+    background: lightgray;
+}
+.table tbody tr:hover {
+    background: lightgreen;
+}
+.edit {
+    cursor: pointer;
+}
+.edit:hover {
+    text-decoration: underline;
+    background: #bf1363;
+}
+
+@media only screen and (max-width: 767px) {
+    .table {
+        display: inline-block;
+        overflow: auto;
+    }
+    .table thead th,
+    .table tbody td {
+        padding: 5% 0;
+        min-width: 100px;
+    }
+}

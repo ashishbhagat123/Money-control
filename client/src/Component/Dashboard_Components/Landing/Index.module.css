@@ -1,0 +1,11 @@
+.income_grid{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+@media only screen and (max-width: 768px){
+    .income_grid{
+        flex-direction: column;
+    }
+}

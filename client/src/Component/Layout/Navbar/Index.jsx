@@ -4,10 +4,11 @@ import styles from "./Index.module.css"
 
 const Navbar = () => {
     const { userDetails } = useContext(AuthContext)
+    console.log(userDetails)
 
     return (
         <div className = {styles.nav}>
-            <h2>Hello! <span>{userDetails.username.toUpperCase()}</span></h2>
+            <h2>Hello! <span>{userDetails?.username.toUpperCase()}</span></h2>
         </div>
     )
 }

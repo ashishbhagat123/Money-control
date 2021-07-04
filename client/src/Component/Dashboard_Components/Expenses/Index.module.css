@@ -1,0 +1,31 @@
+.main {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+}
+.main h1{
+    text-align: center;
+}
+.main > div{
+    border: 1px solid lightgray;
+    padding: 1%;
+    margin: 3% 0;
+}
+.main h2{
+    color: grey;
+}
+.main > div > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main > div > div > div{
+    width: 20%;
+    min-width: 120px;
+}
+
+@media only screen and (max-width:768px){
+    .main{
+        width: 95%;
+    }
+}

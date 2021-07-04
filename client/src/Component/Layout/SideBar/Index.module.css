@@ -29,7 +29,8 @@ div ul li{
     justify-content: space-around;
 }
 div ul li{
-    background: cornflowerblue;
+    cursor: pointer;
+    margin-top: 5%;
 }
 
 div ul li p {
