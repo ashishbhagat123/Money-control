@@ -4,6 +4,7 @@ import Input from "../../Component/Input/Index";
 import styles from "./Index.module.css";
 import axios from "axios";
 import { AuthContext } from "../../Context/Auth/Index";
+import { useHistory } from "react-router";
 
 const initState = {
     email: "",
@@ -12,6 +13,7 @@ const initState = {
 
 const LogIn = () => {
     const [userDetails, setUserDetails] = useState(initState);
+    const history = useHistory();
 
     const handleFormData = (data) => {
         const { name, value } = data;
@@ -21,11 +23,11 @@ const LogIn = () => {
     const { handleAuth } = useContext(AuthContext);
 
     const handleRequest = (data) => {
-        const { error, msg,username, id } = data;
+        const { error, msg, username, id } = data;
         if (error) {
             setErr({ error: error, msg: msg });
         } else {
-            handleAuth({id, username});
+            handleAuth({ id, username });
         }
     };
 
@@ -34,6 +36,10 @@ const LogIn = () => {
             .post("http://localhost:8000/login", userDetails)
             .then((res) => handleRequest(res.data))
             .catch((err) => handleRequest(err));
+    };
+
+    const redirectToSignUp = () => {
+        history.push("/signup");
     };
 
     return (
@@ -45,7 +51,7 @@ const LogIn = () => {
                         alt="signUp"
                     />
                 </div>
-                <div className = {styles.heading}>
+                <div className={styles.heading}>
                     <h1>LogIn</h1>
                     <p>Enter your details below to continue</p>
                     <div className={styles.form}>
@@ -68,6 +74,15 @@ const LogIn = () => {
                             color="Cyan"
                         />
                     </div>
+                    <p>
+                        already have an account?
+                        <span
+                            onClick={redirectToSignUp}
+                            className={styles.logIn_btn}
+                        >
+                            SignUp
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>

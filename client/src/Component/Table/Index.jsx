@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Index.module.css";
 
-const Table = ({ data, color, sort }) => {
+const Table = ({ data, color, sort, handleEdit }) => {
     const sortData = () => {
         switch (sort) {
             case "date":
@@ -32,7 +32,7 @@ const Table = ({ data, color, sort }) => {
                         <th>CATEGORY</th>
                         <th>DATE</th>
                         <th>NOTE</th>
-                        <th>ACTION</th>
+                        {/* <th>ACTION</th> */}
                     </tr>
                 </thead>
                 <tbody>
@@ -42,7 +42,7 @@ const Table = ({ data, color, sort }) => {
                             <td>{e.category}</td>
                             <td>{new Date(e.date).toDateString()}</td>
                             <td>{e.notes || "-"}</td>
-                            <td className = {styles.edit}>Edit</td>
+                            {/* <td onClick = {() => handleEdit(e)} className = {styles.edit}>Edit</td> */}
                         </tr>
                     ))}
                 </tbody>

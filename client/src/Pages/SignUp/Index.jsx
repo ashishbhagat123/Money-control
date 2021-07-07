@@ -4,6 +4,7 @@ import Input from "../../Component/Input/Index";
 import styles from "./Index.module.css";
 import axios from "axios";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const initState = {
     username: "",
@@ -33,10 +34,14 @@ const SignUp = () => {
         setUserDetails({ ...userDetails, [name]: value });
     };
 
+    const redirectToLogIn = () => {
+        history.push("/login")
+    }
+
     const postData = () => {
         if (userDetails.password === userDetails.confirmPassword) {
             axios
-                .post("http://localhost:8000/signup", userDetails)
+                .post("https://ashish-money-control.herokuapp.com/login/signup", userDetails)
                 .then((res) => handleRequest(res.data))
                 .catch((err) => handleRequest());
         } else {
@@ -88,6 +93,12 @@ const SignUp = () => {
                             color="#053742"
                         />
                     </div>
+                    <p>
+                        already have an account?
+                        <span onClick = {redirectToLogIn} className={styles.logIn_btn}>
+                            LogIn
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>

@@ -23,9 +23,24 @@
     width: 20%;
     min-width: 120px;
 }
+.filter_tag{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 320px!important;
+}
+.filter_tag > div{
+    width: 150px;
+}
 
 @media only screen and (max-width:768px){
     .main{
         width: 95%;
+    }
+    .filter_tag{
+        width: 230px!important;
+    }
+    .filter_tag > div{
+        width: 110px;
     }
 }
